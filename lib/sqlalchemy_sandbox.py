@@ -8,5 +8,15 @@ Base = declarative_base()
 class Student(Base):
     pass
 
+    __tablename__ = 'students'
+
+    id = Column(Integer(), primary_key=True)
+    name = Column(String())
+
+
 if __name__ == '__main__':
     pass
+    # data models
+
+engine = create_engine('sqlite:///students.db')
+Base.metadata.create_all(engine)
